@@ -1,0 +1,15 @@
+# 1. Ejecutar el script Python para generar el fichero bitcoin_price.json
+echo "Paso 1: Ejecutando el generador de datos de Bitcoin (bitcoin_price.py)..."
+echo "Déjalo correr por unos minutos y luego detenlo con CTRL+C."
+python bitcoin_price.py
+
+# 2. Ejecutar el script PySpark para procesar los datos
+#    Este script leerá el fichero bitcoin_price.json generado en el paso anterior.
+echo "Paso 2: Ejecutando el script de Spark para procesar los datos (process_bitcoin_data.py)..."
+spark-submit process_bitcoin_data.py
+
+# Ejemplo de cómo ejecutar si tu `spark-submit` no está en el PATH pero sabes dónde está SPARK_HOME:
+# $SPARK_HOME/bin/spark-submit process_bitcoin_data.py
+
+# Si quieres especificar un master (ej. local con 2 cores):
+# spark-submit --master local[2] process_bitcoin_data.py
