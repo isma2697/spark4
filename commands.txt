@@ -1,3 +1,16 @@
+# Crear y activar un entorno virtual en Python
+python3 -m venv venv
+source venv/bin/activate
+
+# Instalar PySpark en el entorno virtual
+pip install pyspark
+
+# (Opcional) Escuchar en el puerto 9999 con netcat, si se usa en el script
+nc -lk 9999
+
+# Ejecutar el primer caso de uso (asegúrate de tener el archivo use_case_1.py)
+python3 use_case_1.py
+
 # 1. Ejecutar el script Python para generar el fichero bitcoin_price.json
 echo "Paso 1: Ejecutando el generador de datos de Bitcoin (bitcoin_price.py)..."
 echo "Déjalo correr por unos minutos y luego detenlo con CTRL+C."
